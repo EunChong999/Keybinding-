@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Command 
+public abstract class Command : MonoBehaviour
 {
     public abstract void Execute();
 }
