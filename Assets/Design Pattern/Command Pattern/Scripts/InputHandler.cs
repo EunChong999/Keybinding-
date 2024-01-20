@@ -1,24 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public Command buttonSpace;
-    public Command buttonLeftShift;
-    public Command buttonTab;
-    public Command buttonLeftControl;
+    public Command buttonX;
+    public Command buttonY;
+    public Command buttonB;
+    public Command buttonA;
 
-    void Update()
+    public Command HandleInput()
     {
-        HandleInput();
-    }
+        if (Input.GetKeyDown(KeyCode.X)) return buttonX;
+        else if (Input.GetKeyDown(KeyCode.Y)) return buttonY;
+        else if (Input.GetKeyDown(KeyCode.B)) return buttonB;
+        else if (Input.GetKeyDown(KeyCode.A)) return buttonA;
 
-    void HandleInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) buttonSpace.Execute();
-        else if (Input.GetKeyDown(KeyCode.LeftShift)) buttonLeftShift.Execute();
-        else if (Input.GetKeyDown(KeyCode.Tab)) buttonTab.Execute();
-        else if (Input.GetKeyDown(KeyCode.LeftControl)) buttonLeftControl.Execute();
+        return null;
     }
 }

@@ -132,9 +132,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 574848642}
+  - component: {fileID: 574848644}
   - component: {fileID: 574848643}
   m_Layer: 0
-  m_Name: InputHandler
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,10 +168,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fedc9cb4dacbcc24490bd60e964f4584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonSpace: {fileID: 6290884298327646669, guid: d359ba778c4027c4a95b45772aa2480d, type: 3}
-  buttonLeftShift: {fileID: 2812963491961758006, guid: 9a1c235d9a940b84da52da551cc9873a, type: 3}
-  buttonTab: {fileID: 6859584428823623972, guid: 32af352bf17a37a45904e5c539a369a4, type: 3}
-  buttonLeftControl: {fileID: 1407694957403772210, guid: bd687fd6e61bebf4ca8cec1168ba3442, type: 3}
+  buttonX: {fileID: 2812963491961758006, guid: 9a1c235d9a940b84da52da551cc9873a, type: 3}
+  buttonY: {fileID: 6290884298327646669, guid: d359ba778c4027c4a95b45772aa2480d, type: 3}
+  buttonB: {fileID: 1407694957403772210, guid: bd687fd6e61bebf4ca8cec1168ba3442, type: 3}
+  buttonA: {fileID: 6859584428823623972, guid: 32af352bf17a37a45904e5c539a369a4, type: 3}
+--- !u!114 &574848644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 574848641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201947dc45e154145a371ddce0b18724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputHandler: {fileID: 574848643}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

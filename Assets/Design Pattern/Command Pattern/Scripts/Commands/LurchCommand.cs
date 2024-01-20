@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireGunCommand : Command
+public class LurchCommand : Command
 {
     public override void Execute(GameActor actor)
     {
-        actor.FireGun();
+        actor.Lurch();
     }
 }
