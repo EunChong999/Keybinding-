@@ -16,4 +16,14 @@ public class InputHandler : MonoBehaviour
 
         return null;
     }
+
+    public string KeyInput()
+    {
+        if (Input.GetKeyDown(KeyCode.X)) return "X";
+        else if (Input.GetKeyDown(KeyCode.Y)) return "Y";
+        else if (Input.GetKeyDown(KeyCode.B)) return "B";
+        else if (Input.GetKeyDown(KeyCode.A)) return "A";
+
+        return null;
+    }
 }

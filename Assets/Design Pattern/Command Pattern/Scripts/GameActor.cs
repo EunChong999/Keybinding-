@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 public class GameActor : MonoBehaviour
 {
     [SerializeField] InputHandler inputHandler;
     Command command;
+    string str;
+    StringBuilder sb = new StringBuilder();
 
     private void Update()
     {
         command = inputHandler.HandleInput();
+        str = inputHandler.KeyInput();
 
         if (command)
         {
@@ -19,21 +23,37 @@ public class GameActor : MonoBehaviour
 
     public void FireGun()
     {
-        Debug.Log("FireGun");
+        sb.Append("FireGun");
+        sb.Append("_");
+        sb.Append(str);
+        Debug.Log(sb);
+        sb.Remove(0, sb.Length);
     }
 
     public void Jump()
     {
-        Debug.Log("Jump");
+        sb.Append("Jump");
+        sb.Append("_");
+        sb.Append(str);
+        Debug.Log(sb);
+        sb.Remove(0, sb.Length);
     }
 
     public void SwapWeapon()
     {
-        Debug.Log("SwapWeapon");
+        sb.Append("SwapWeapon");
+        sb.Append("_");
+        sb.Append(str);
+        Debug.Log(sb);
+        sb.Remove(0, sb.Length);
     }
 
     public void Lurch()
     {
-        Debug.Log("Lurch");
+        sb.Append("Lurch");
+        sb.Append("_");
+        sb.Append(str);
+        Debug.Log(sb);
+        sb.Remove(0, sb.Length);
     }
 }
