@@ -1,3 +1,5 @@
+using System.Reflection;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -25,5 +27,31 @@ public class InputHandler : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.A)) return "A";
 
         return null;
+    }
+
+    public void SwitchKey(string from, string to)
+    {
+        FieldInfo[] members = typeof(InputHandler).GetFields(BindingFlags.Public
+                | System.Reflection.BindingFlags.NonPublic
+                | System.Reflection.BindingFlags.Static
+                | System.Reflection.BindingFlags.Instance);
+
+        foreach (var member in members)
+        {
+            if (member.Name == from)
+            {
+                Command temp = (Command)member.GetValue(this);
+                continue;
+            }
+
+            if (member.Name == to) 
+            {
+
+            }
+
+            Debug.Log(temp.ToString());
+            //Debug.Log(member.Name);
+            //Debug.Log(member.FieldType);
+        }
     }
 }

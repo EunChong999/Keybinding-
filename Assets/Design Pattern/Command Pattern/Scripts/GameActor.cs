@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using TMPro;
 using UnityEngine;
 
 public class GameActor : MonoBehaviour
 {
     [SerializeField] InputHandler inputHandler;
     Command command;
+    
     string str;
     StringBuilder sb = new StringBuilder();
+    [SerializeField] TextMeshProUGUI textMesh;
 
     private void Update()
     {
@@ -27,6 +30,7 @@ public class GameActor : MonoBehaviour
         sb.Append("_");
         sb.Append(str);
         Debug.Log(sb);
+        textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
 
@@ -36,6 +40,7 @@ public class GameActor : MonoBehaviour
         sb.Append("_");
         sb.Append(str);
         Debug.Log(sb);
+        textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
 
@@ -45,6 +50,7 @@ public class GameActor : MonoBehaviour
         sb.Append("_");
         sb.Append(str);
         Debug.Log(sb);
+        textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
 
@@ -54,6 +60,7 @@ public class GameActor : MonoBehaviour
         sb.Append("_");
         sb.Append(str);
         Debug.Log(sb);
+        textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
 }
