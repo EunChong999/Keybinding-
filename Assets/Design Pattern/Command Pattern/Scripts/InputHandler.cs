@@ -1,5 +1,6 @@
 using System.Reflection;
 using Unity.VisualScripting;
+using UnityEditor.PackageManager.UI;
 using UnityEngine;
 
 public class InputHandler : MonoBehaviour
@@ -31,27 +32,8 @@ public class InputHandler : MonoBehaviour
 
     public void SwitchKey(string from, string to)
     {
-        FieldInfo[] members = typeof(InputHandler).GetFields(BindingFlags.Public
-                | System.Reflection.BindingFlags.NonPublic
-                | System.Reflection.BindingFlags.Static
-                | System.Reflection.BindingFlags.Instance);
-
-        foreach (var member in members)
-        {
-            if (member.Name == from)
-            {
-                Command temp = (Command)member.GetValue(this);
-                continue;
-            }
-
-            if (member.Name == to) 
-            {
-
-            }
-
-            Debug.Log(temp.ToString());
-            //Debug.Log(member.Name);
-            //Debug.Log(member.FieldType);
-        }
+        Command temp = (Command)GetType().GetField("button" + from).GetValue(this);
+        GetType().GetField("button" + from).SetValue(this, (Command)GetType().GetField("button" + to).GetValue(this));
+        GetType().GetField("button" + to).SetValue(this, temp);
     }
 }
