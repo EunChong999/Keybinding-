@@ -29,7 +29,6 @@ public class GameActor : MonoBehaviour
         sb.Append("FireGun");
         sb.Append("_");
         sb.Append(str);
-        Debug.Log(sb);
         textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
@@ -39,7 +38,6 @@ public class GameActor : MonoBehaviour
         sb.Append("Jump");
         sb.Append("_");
         sb.Append(str);
-        Debug.Log(sb);
         textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
@@ -49,7 +47,6 @@ public class GameActor : MonoBehaviour
         sb.Append("SwapWeapon");
         sb.Append("_");
         sb.Append(str);
-        Debug.Log(sb);
         textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
@@ -59,7 +56,6 @@ public class GameActor : MonoBehaviour
         sb.Append("Lurch");
         sb.Append("_");
         sb.Append(str);
-        Debug.Log(sb);
         textMesh.text = sb.ToString();
         sb.Remove(0, sb.Length);
     }
